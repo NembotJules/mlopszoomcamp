@@ -11,7 +11,7 @@ __pycache__/
 #backend db
 02-Experiment-Tracking/homework/backend.db
 #mlflow db
-02-experiment-tracking/mlflow.db
+mlflow.db
 
 
 
