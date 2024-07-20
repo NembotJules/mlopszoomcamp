@@ -54,3 +54,15 @@ Along with this information, Mlflow automatically logs extra information about t
 - Version of the code (git commit)
 - Start and end time
 - Author
+
+## Installing Mlflow 
+
+pip : pip install mlflow
+conda : conda install -c conda-forge mlflow
+
+## Basic Mlflow Commands 
+
+import mlflow --- To import mlflow
+mlflow.set_tracking_uri("sqlite:///mlflow.db") ---- Use sqlite as the backend store for tracking experiments
+mlflow.set_experiment("nyc-taxi-experiment") ----- Creating a new environment if one doesn't already exist
+
