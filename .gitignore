@@ -10,6 +10,8 @@ __pycache__/
 02-Experiment-Tracking/homework/artifacts/
 #backend db
 02-Experiment-Tracking/homework/backend.db
+#mlflow db
+02-experiment-tracking/mlflow.db
 
 
 
