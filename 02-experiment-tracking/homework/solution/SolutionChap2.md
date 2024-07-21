@@ -16,4 +16,8 @@ What is the value of min_sample_split parameter : **2**
 
 In addition to `backend-store-uri`, what else do you need to pass to properly configure the server ? : **default-artifact-root**
 
+# Question 5 : Tune model hyperparameters
+
+What is the best validation RMSE that you got? : 
+
 
