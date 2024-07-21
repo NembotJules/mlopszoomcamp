@@ -57,7 +57,7 @@ Along with this information, Mlflow automatically logs extra information about t
 
 ## Installing Mlflow 
 
-`pip` : pip install mlflow
+`pip` : pip install mlflow <br>
 `conda` : conda install -c conda-forge mlflow
 
 ## Basic Mlflow Commands 
