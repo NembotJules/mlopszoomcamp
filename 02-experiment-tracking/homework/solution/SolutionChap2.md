@@ -20,6 +20,11 @@ In addition to `backend-store-uri`, what else do you need to pass to properly co
 
 <img src = "imgs/Question5.png">
 
-What is the best validation RMSE that you got? : **5.355**
+What is the best validation RMSE that you got? : **5.355**: 
+
+# Question 6 : Promote the best model to the model registry
+What is the test RMSE of the best model ? : **5.567**
+
+<img src = "imgs/Question6.png">
 
 
