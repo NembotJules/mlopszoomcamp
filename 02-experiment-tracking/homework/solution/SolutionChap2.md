@@ -14,4 +14,6 @@ What is the value of min_sample_split parameter : **2**
 
 # Question 4 : Launch the tracking server locally 
 
+In addition to `backend-store-uri`, what else do you need to pass to properly configure the server ? : **default-artifact-root**
+
 
