@@ -57,12 +57,12 @@ Along with this information, Mlflow automatically logs extra information about t
 
 ## Installing Mlflow 
 
-pip : pip install mlflow
-conda : conda install -c conda-forge mlflow
+`pip` : pip install mlflow
+`conda` : conda install -c conda-forge mlflow
 
 ## Basic Mlflow Commands 
 
-import mlflow --- To import mlflow <br>
-mlflow.set_tracking_uri("sqlite:///mlflow.db") ---- Use sqlite as the backend store for tracking experiments <br>
-mlflow.set_experiment("nyc-taxi-experiment") ----- Creating a new environment if one doesn't already exist  <br>
+`import mlflow` --- To import mlflow <br>
+`mlflow.set_tracking_uri("sqlite:///mlflow.db")` ---- Use sqlite as the backend store for tracking experiments <br>
+`mlflow.set_experiment("nyc-taxi-experiment")` ----- Creating a new environment if one doesn't already exist  <br>
 
