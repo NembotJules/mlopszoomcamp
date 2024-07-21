@@ -66,3 +66,7 @@ Along with this information, Mlflow automatically logs extra information about t
 `mlflow.set_tracking_uri("sqlite:///mlflow.db")` ---- Use sqlite as the backend store for tracking experiments <br>
 `mlflow.set_experiment("nyc-taxi-experiment")` ----- Creating a new environment if one doesn't already exist  <br>
 
+## Model Management
+
+<img src = "solution/imgs/Experiment-tracking.webp">
+
