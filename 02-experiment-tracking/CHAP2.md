@@ -68,5 +68,5 @@ Along with this information, Mlflow automatically logs extra information about t
 
 ## Model Management
 
-<img src = "solution/imgs/Experiment-tracking.webp">
+<img src = "homework/solution/imgs/Experiment-tracking.webp">
 
