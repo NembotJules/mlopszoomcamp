@@ -18,6 +18,8 @@ In addition to `backend-store-uri`, what else do you need to pass to properly co
 
 # Question 5 : Tune model hyperparameters
 
-What is the best validation RMSE that you got? : 
+<img src = "imgs/Question5.png">
+
+What is the best validation RMSE that you got? : **5.355**
 
 
