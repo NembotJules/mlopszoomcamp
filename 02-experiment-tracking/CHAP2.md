@@ -64,9 +64,26 @@ Along with this information, Mlflow automatically logs extra information about t
 
 `import mlflow` --- To import mlflow <br>
 `mlflow.set_tracking_uri("sqlite:///mlflow.db")` ---- Use sqlite as the backend store for tracking experiments <br>
-`mlflow.set_experiment("nyc-taxi-experiment")` ----- Creating a new environment if one doesn't already exist  <br>
+`mlflow.set_experiment("nyc-taxi-experiment")` ----- Creating a new environment if one doesn't already exist  
+
+`mlflow.log_artifact(local_path = "The local of the element you want to save, artifact_path = "Where you want to save the model in Mlflow")` <br>
+`mlflow.xgboost.log_model(the model, artifact_path = "Where the model will be save in Mlflow")`
 
 ## Model Management
 
+### Machine Learning LifeCycle
+
+The machine learning lifecycle refers to the multiple steps that are needed in order to build and maintain a Machine Learning Model/System.
+
 <img src = "homework/solution/imgs/Experiment-tracking.webp">
+
+You should not use a folder system to manage your models. Why? : 
+
+ - **Error prone:** It is possible that accidentally you end up overwriting an old model
+
+
+ - **There is no versioning:**  Sometimes the name of the folder can indicate the version of the model, but this system become inefficient when you have a lot of versions
+
+
+ - **No model lineage:** It is not easy to understand how all these models were created
 
