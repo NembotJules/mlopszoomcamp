@@ -99,7 +99,7 @@ You should not use a folder system to manage your models. Why? :
 
  MLflow Tracking Server is a stand-alone HTTP server that provides REST APIs for accessing backend and/or artifact store. Tracking server also offers flexibility to configure what data to server, govern access control, versioning, and etc. 
 
- <img src = "homework/solutiontracking-setup-overview.png">
+ <img src = "homework/solution/imgs/tracking-setup-overview.png">
 
 Common setups include : 
 
