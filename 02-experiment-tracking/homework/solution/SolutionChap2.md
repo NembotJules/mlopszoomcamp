@@ -10,6 +10,7 @@ How many files were saved to the output folder :  **4**
 # Question 3: Train a model with autolog
 
 What is the value of min_sample_split parameter : **2**
+<img src = "../imgs/Question3.png">
 
 # Question 4 : Launch the tracking server locally 
 
