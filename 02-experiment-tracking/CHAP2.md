@@ -87,3 +87,25 @@ You should not use a folder system to manage your models. Why? :
 
  - **No model lineage:** It is not easy to understand how all these models were created
 
+ ## Model Registry 
+
+ In ML, a model registry is a centralized repository or model store, similar to a library, that lets you effectively manage and organize machine learning models. Here are some clarifications about the model registry : 
+
+ - The model registry is actually not deploying any model, the model registry only list the models that are production ready. And the stages are just labels that are assigned to the model. <br>
+
+ - So you need to complement the model registry with some CI/CD code to do the actual deployment of this models.  <br>
+
+ ## Mlflow Tracking server
+
+ MLflow Tracking Server is a stand-alone HTTP server that provides REST APIs for accessing backend and/or artifact store. Tracking server also offers flexibility to configure what data to server, govern access control, versioning, and etc. 
+
+ <img src = "tracking-setup-overview.png">
+
+Common setups include : 
+
+**Localhost** : By default, MLflow records metadata and artifacts for each run to a local directory, mlruns. This is the simplest way to get started with MLflow Tracking, without setting up any external server, database, and storage.
+
+**Local Tracking with a local Database**: The MLflow client can interface with a SQLAlchemy-compatible database (e.g., SQLite, PostgreSQL, MySQL) for the backend. Saving metadata to a database allows you cleaner management of your experiment data while skipping the effort of setting up a server.
+
+**Remote Tracking with Mlflow tracking server** : MLflow Tracking Server can be configured with an artifacts HTTP proxy, passing artifact requests through the tracking server to store and retrieve artifacts without having to interact with underlying object store services. This is particularly useful for team development scenarios where you want to store artifacts and experiment metadata in a shared location with proper access control.
+
