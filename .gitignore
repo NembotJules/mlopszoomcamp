@@ -12,7 +12,8 @@ __pycache__/
 02-Experiment-Tracking/homework/backend.db
 #mlflow db
 mlflow.db
-
+# mlflow runs
+02-experiment-tracking/homework/mlruns
 
 
 # Distribution / packaging
