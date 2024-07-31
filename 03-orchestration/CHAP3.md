@@ -54,3 +54,15 @@ Mage helps prepare data, train machine learning models, and deploy them with acc
 ## 3. Standardize complex processes
 
 Mage simplifies MLOps by providing a unified platform for data pipelining, model development, deployment, versioning, CI/CD, and maintenance, allowing developers to focus on model creation while improving efficiency and collaboration.  
+
+## Course Program
+
+### 3.0 : Introduction: ML pipelines and Mage
+
+This chapter was an introduction to Ml pipelines and Mage. I learned how to setup Mage and run some basic pipelines.
+
+### 3.1 : Data preparation: ETL and feature engineering
+
+Learned how to build ETL pipelines on Mage and how to do feature engineering.
+
+### 3.2 : Training: sklearn models and XGBoost
