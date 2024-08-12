@@ -66,11 +66,11 @@ Deployment requires a **name** and a **reference** to an underlying flow. Trigge
 
 **Start a run of the deployed flow from the CLI** : `prefect deployment run Hello/my-deployment`
 
-NB : *my-pool*  is the name of the pool. <br>   
-     *my-flow.py* is the python file in which the flow you want to deploy is located.
-     *say_hello* is the name of the entrypoint aka the function representing the flow.
-     *my-deployment* is the name you want to give your deployment.
-     *Hello* is the name of the deployed flow (not the name of the deployment)
+NB : *my-pool* : is the name of the pool. <br>   
+     *my-flow.py* : is the python file in which the flow you want to deploy is located. <br>  
+     *say_hello*:  is the name of the entrypoint aka the function representing the flow. <br>  
+     *my-deployment*:  is the name you want to give your deployment.<br>  
+     *Hello*:  is the name of the deployed flow (not the name of the deployment)
 
 
 
