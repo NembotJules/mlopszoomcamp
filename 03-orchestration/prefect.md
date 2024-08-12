@@ -54,4 +54,23 @@ Deployment requires a **name** and a **reference** to an underlying flow. Trigge
 
 **Worker** : You can think of a worker, as an entity or an agent that is responsible for asking the worker pool if there is anything to be executed. 
 
+### Important piece of Code 
+
+**Start a Prefect project** : `prefect init`
+
+**Start a Prefect server** : `prefect server start`
+
+**Start a worker that polls your work pool** : `prefect worker start -p **my-pool** -t process`
+
+**Deploy your flow** : `prefect deploy my-flow.py:say_hello -n 'my-deployment' -p **my-pool**`
+
+**Start a run of the deployed flow from the CLI** : `prefect deployment run Hello/my-deployment`
+
+NB : *my-pool*  is the name of the pool. <br>   
+     *my-flow.py* is the python file in which the flow you want to deploy is located.
+     *say_hello* is the name of the entrypoint aka the function representing the flow.
+     *my-deployment* is the name you want to give your deployment.
+     *Hello* is the name of the deployed flow (not the name of the deployment)
+
+
 
