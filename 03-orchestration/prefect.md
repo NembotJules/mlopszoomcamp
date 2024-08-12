@@ -32,3 +32,26 @@ A **task** has the `@task` decorator and the a **Flow** has the `@flow` decorato
 ## 3.3 Prefect Workflow
 
 In this chapter i learn how to run some basic workflow with prefect, moving code from experimental stage (Notebooks) to production stage (python script)  run workflows and visualize them in the UI.
+
+## 3.4 Deploy your workflow
+
+### Important concepts Definitions
+
+**Deployments** : Are server-side representations of flows. They store the crucial metadata needed for remote orchestration including **when**, **where**, and **how** a workflow should run. Deployments elevate workflows from functions that you should run manually to API managed entities that can be triggered remotely.
+
+Deployment requires a **name** and a **reference** to an underlying flow. Triggering a run of a deployment from the Prefect CLI can be done like this : 
+
+`prefect deployment run my-first-flow/my-first-deployment`
+
+
+**Worker Pool** : Work pools organize work for execution. Work pools have types corresponding to the infrastructure that will execute the flow code, as well as the delivery method of work to that environment. A simple and easy way to understand Worker Pool is to think of them as distribution center where tasks are organized before being executed. Their responsability is to decide how and where tasks or flows must be executed. There are two types of Work pool : 
+
+- **Pull Work Pool** : In this type of work pool a ""worker"" we look for work to do in the worker pool.
+
+- **Push Work Pool** : Here the worker pool sends directly the work to a cloud service like Google cloud run, or AWS ECS. Nobody needs to look for them.
+
+- **Managed Work Pool** : This worker pool are automatically managed by Prefect. You don't have to worry about the way the work is distributed or run. Everything is done for you.
+
+**Worker** : You can think of a worker, as an entity or an agent that is responsible for asking the worker pool if there is anything to be executed. 
+
+
