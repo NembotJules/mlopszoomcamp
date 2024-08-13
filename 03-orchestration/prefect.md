@@ -73,4 +73,11 @@ NB : *my-pool* : is the name of the pool. <br>
      *Hello*:  is the name of the deployed flow (not the name of the deployment)
 
 
+## 3.5 Working with deployments
+
+This chapter mainly talks about how you can create Prefect **Blocks** to link your cloud account to Prefect. In the case of the video it was an AWS S3 bucket. But what is a Block? A **Prefect Block** store configuration and provide and interface for interacting with external systems. For example, blocks can be used to download data from or upload data to an S3 bucket, query data from or write data to a database, or send a message to a Slack channel.
+
+We also learn how to schedule deployment simply using the UI, and the command line.
+
+
 
