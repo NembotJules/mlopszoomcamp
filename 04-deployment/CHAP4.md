@@ -2,6 +2,11 @@
 
 ## 4.1 Three ways of deploying a model
 
+- Batch mode (offline deployment) : Here the model is not up and running all the time, we apply our model to new data on a regular base (hourly, daily, etc)
+- Online deployment : We need the model to be up and running all the time, we need predictions as soon as possible. It online deployment we have two variances: web services and streaming.
+
+In web service, the mode is available via a web service we can send http request and get predictions from the service. Streaming is when there is a stream of events, models services is listening to the stream of events and provide predictions in real time.
+
 
 
 ## 4.2 Web services : Deploying a model with Flask and Docker
