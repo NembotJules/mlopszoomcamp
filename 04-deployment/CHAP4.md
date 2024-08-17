@@ -115,34 +115,34 @@ This command will send a request to our locally hosted service, allowing us to v
 
 When installing and using AWS Elastic Beanstalk (EB), there are a few additional considerations and best practices to keep in mind:
 
-**AWS Credentials:** Ensure that you have configured AWS credentials properly. You can use the AWS Command Line Interface (CLI) or IAM roles if you’re running EB on an AWS resource like an EC2 instance. Make sure the credentials have the necessary permissions for creating and managing Elastic Beanstalk resources.
+- **AWS Credentials:** Ensure that you have configured AWS credentials properly. You can use the AWS Command Line Interface (CLI) or IAM roles if you’re running EB on an AWS resource like an EC2 instance. Make sure the credentials have the necessary permissions for creating and managing Elastic Beanstalk resources.
 
 
-**Region Selection:** Specify the AWS region where you want to deploy your Elastic Beanstalk application. The ‘-r’ flag in the ‘eb init’ command specifies the region. Choose a region that is geographically close to your target audience for lower latency.
+- **Region Selection:** Specify the AWS region where you want to deploy your Elastic Beanstalk application. The ‘-r’ flag in the ‘eb init’ command specifies the region. Choose a region that is geographically close to your target audience for lower latency.
 
 
-**Platform:** Select the appropriate platform for your application. In your example, you’re using the Docker platform. Elastic Beanstalk supports various platforms, including Node.js, Python, Ruby, Java, and more. Choose the one that matches your application’s technology stack.
+- **Platform:** Select the appropriate platform for your application. In your example, you’re using the Docker platform. Elastic Beanstalk supports various platforms, including Node.js, Python, Ruby, Java, and more. Choose the one that matches your application’s technology stack.
 
 
-**Environment Configuration:** After initializing your application, you’ll typically create one or more environments within that application. Environments are isolated instances of your application with their own settings. You can define environment-specific configuration, such as environment variables and scaling options.
+- **Environment Configuration:** After initializing your application, you’ll typically create one or more environments within that application. Environments are isolated instances of your application with their own settings. You can define environment-specific configuration, such as environment variables and scaling options.
 
 
-**Deployment:** Use the ‘eb deploy’ command to package and deploy your application code to Elastic Beanstalk environments. This command uploads your code and dependencies to the environment, making it available for execution.
+- **Deployment:** Use the ‘eb deploy’ command to package and deploy your application code to Elastic Beanstalk environments. This command uploads your code and dependencies to the environment, making it available for execution.
 
 
-**Logs and Monitoring:** AWS Elastic Beanstalk integrates with AWS CloudWatch for monitoring and logging. You can access logs and performance metrics to monitor the health and performance of your environments. Set up alarms and triggers to be notified of any issues.
+- **Logs and Monitoring:** AWS Elastic Beanstalk integrates with AWS CloudWatch for monitoring and logging. You can access logs and performance metrics to monitor the health and performance of your environments. Set up alarms and triggers to be notified of any issues.
 
 
-**Scaling:** Elastic Beanstalk provides auto-scaling options to automatically adjust the number of instances based on traffic. You can configure scaling policies to ensure that your application can handle fluctuations in demand.
+- **Scaling:** Elastic Beanstalk provides auto-scaling options to automatically adjust the number of instances based on traffic. You can configure scaling policies to ensure that your application can handle fluctuations in demand.
 
 
-**Security:** Implement security best practices by configuring security groups, using AWS Identity and Access Management (IAM) for access control, and applying encryption where necessary.
+- **Security:** Implement security best practices by configuring security groups, using AWS Identity and Access Management (IAM) for access control, and applying encryption where necessary.
 
 
-**Cost Management:** Keep an eye on the cost of running Elastic Beanstalk environments, especially when using auto-scaling. Use AWS Budgets and Cost Explorer to manage and optimize your AWS expenses.
+- **Cost Management:** Keep an eye on the cost of running Elastic Beanstalk environments, especially when using auto-scaling. Use AWS Budgets and Cost Explorer to manage and optimize your AWS expenses.
 
 
-**Documentation and Support:** AWS Elastic Beanstalk has extensive documentation and a support community. If you encounter issues or need assistance, consult the official documentation and consider leveraging AWS support options.
+- **Documentation and Support:** AWS Elastic Beanstalk has extensive documentation and a support community. If you encounter issues or need assistance, consult the official documentation and consider leveraging AWS support options.
 
 By following these considerations and best practices, you can effectively install, configure, and manage AWS Elastic Beanstalk for your applications while ensuring reliability and cost-efficiency.
 
