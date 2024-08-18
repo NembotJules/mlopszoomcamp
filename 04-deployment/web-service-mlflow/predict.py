@@ -8,7 +8,9 @@ from flask import Flask, request, jsonify
 import mlflow
 
 RUN_ID = '0f06d2686fe64fda9f835fcd7639d773'
-#logged_model = f'runs:/{RUN_ID}/model'
+
+#loggin the model directly from S3
+
 logged_model = f's3://mlflow-model/1/{RUN_ID}/artifacts/model'
 
 # Load model as a PyFuncModel.
