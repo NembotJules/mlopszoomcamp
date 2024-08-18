@@ -1,10 +1,6 @@
 import pickle
 import mlflow
 
-import os
-os.environ["AWS_ACCESS_KEY_ID"] = "AKIA6ODU2FARFDCJJW5W"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
-os.environ["AWS_DEFAULT_REGION"] = "us-east-1"
 
 
 from flask import Flask, request, jsonify
