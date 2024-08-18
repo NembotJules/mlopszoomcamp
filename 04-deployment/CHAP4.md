@@ -199,6 +199,62 @@ eb terminate ride-duration-prediction-env
 This command will gracefully shut down and remove the Elastic Beanstalk environment, helping you manage your resources efficiently.
 
 
+## 4.3 Web-services: Getting the models from the model registry (MLflow)
+
+1) Pre-requisite : Create an EC2 instance, create an S3 bucket, see if you can find the list of bucket using your EC2 instance with the command: 
+
+
+```bash
+ aws s3 ls
+```
+
+
+If you have the CredentialError: Unable to locate credentials,  use : **aws configure**, put your access id, your access secret key id, set your region.
+
+If after that your are still unable to connect it means what of the previous information is wrong.
+
+
+2) Start the mlflow tracking server: 
+
+```bash
+mlflow server --backend-store-uri=sqlite:///mlflow.db --default-artifact-root=s3://the-name-of-your-s3-bucket/
+```
+
+Now open the Mlflow UI at http://127.0.0.1:5000
+
+3) Create a Jupyter Notebook to train the Random Forest Model, tracked and saved the model in Mlflow.
+
+We can check the experiment detail in the Mlflow UI. [Include an Image of the Mlflow UI]
+
+At this step if you have the NoCredentialsError it means Mlflow cannot access your S3 bucket. How can you fix it??
+
+MLflow and Boto3 (the AWS SDK for Python) look for AWS credentials in the environment variables by default. You can set these variables in your terminal session:
+
+```bash
+export AWS_ACCESS_KEY_ID=your_access_key_id
+export AWS_SECRET_ACCESS_KEY=your_secret_access_key
+export AWS_DEFAULT_REGION=your_default_region
+```
+
+If the previous don't work you can set the variables using os: 
+
+```bash
+import os
+os.environ["AWS_ACCESS_KEY_ID"] = "your_access_key_id"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "your_secret_access_key"
+os.environ["AWS_DEFAULT_REGION"] = "your_default_region"
+```
+
+After that you can start using the logged model.  There are multiple ways to use the logged model. If we are using runs/RUN_ID/model then we run with risk of availability lest the tracking server should go down. However, if fetch the artifact directly from S3 then we are not dependent on the artifact server. Please check the predict.py script to see the changes made.
+
+
+
+
+
+
+
+
+
 
 
 
