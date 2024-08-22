@@ -15,6 +15,7 @@ __pycache__/
 mlflow.db
 # mlflow runs
 02-experiment-tracking/homework/mlruns
+/home/maxtheking/Desktop/mlopszoomcamp/04-deployment/batch/output
 
 
 # Distribution / packaging
