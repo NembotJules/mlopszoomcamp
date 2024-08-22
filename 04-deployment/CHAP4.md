@@ -247,6 +247,94 @@ os.environ["AWS_DEFAULT_REGION"] = "your_default_region"
 
 After that you can start using the logged model.  There are multiple ways to use the logged model. If we are using runs/RUN_ID/model then we run with risk of availability lest the tracking server should go down. However, if fetch the artifact directly from S3 then we are not dependent on the artifact server. Please check the predict.py script to see the changes made.
 
+## 4.4 Batch Deployment : Preparing a scoring script
+
+I've been documenting my learning journey on LinkedIn, i will just copy paste my post here : 
+
+Day 04 of My 30 Days MLOps Challenge
+
+
+
+Today, I continued learning about batch deployment.
+
+
+I learned how to use Prefect to turn my Python functions into flows and how to schedule their deployments using cron jobs.
+
+
+For those unfamiliar, Prefect is a workflow orchestration framework designed to build resilient data pipelines in Python.
+
+
+Here are some key concepts in Prefect:
+
+
+- Task: A discrete unit of work in a Prefect workflow, similar to a Python function. It takes input, performs work, and produces output.
+
+
+- Flow: A container for workflow logic, akin to a Python function that calls other functions (tasks). Flows can be viewed as parent functions defined to call tasks.
+
+
+- Subflow: A flow that is called by another flow.
+
+
+In Prefect, tasks are decorated with @task and flows with @flow.
+
+
+I've also encountered an issue where Prefect fails to deploy flows that require additional parameters at runtime. For example, I have a CLI function (score.py) that takes parameters like year, month, and run_id at runtime. Attempting to deploy this function consistently results in an error. If anyone has a solution, I'd appreciate the help. For reference, I’m currently using Prefect version 2.20.1.
+
+
+Additionally, I’ve started reading the book: Machine Learning Engineering with Python and am currently on Chapter 2. So far, I’ve learned:
+
+
+- What it means to be an ML engineer.
+
+
+- The broad components that make up an ML solution (Storage layer, Compute layer, Application layer).
+
+
+- The Machine Learning Development Process.
+
+
+
+Day 05 Mlops 30 Days Challenge
+
+
+Today I finished learning about Batch Deployment. Here is a quick recap of all the things I've learned in this part : 
+
+
+Batch Deployment: You train your model offline and apply it to new data coming regularly (hour, days, month)
+
+
+The pros of batch deployment : 
+
+- It is simple to implement
+- Requires relatively low latency to the user.
+
+
+The cons of batch deployment : 
+
+- Users do not get the most up-to-date predictions.
+- It does not scale to complex input types.
+
+
+I've also learned how to turn a notebook into a Python script, parameterize the script, and use Prefect to schedule the script execution on a regular basis.
+
+
+I've also learned how to configure AWS S3 bucket as the artifact store for Mlflow and Prefect.
+
+
+I've also continued learning with the book Machine Learning Engineering with Python, and today I learned about the four steps of an Ml project, which are : 
+
+
+- Discover : clarity on the business question, clear arguments for ML over another approach, the definition of the KPIs and metrics you want to optimize, and a sketch of the route to value.
+
+- Play: Detail understanding of the Data, working proof of concept, agreement on the logic, and model, that will solve the problem, evidence that a solution is doable within a realistic resource scenario, and evidence that good ROI can be achieved.
+
+- Develop: A working solution that can be hosted on appropriate and available infrastructure, Thorough test results and performance metrics (for algorithm and software), and agreed retraining and deployment strategy, unit tests, integration tests, and regression tests, solution packaging, and pipelines
+
+- Deploy : A working and tested deployment process. Provisioned infrastructure with appropriate security and performance characteristics, model retraining and management processes, and end-to-end working solution
+
+
+
 
 
 
