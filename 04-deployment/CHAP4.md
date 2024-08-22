@@ -251,7 +251,7 @@ After that you can start using the logged model.  There are multiple ways to use
 
 I've been documenting my learning journey on LinkedIn, i will just copy paste my post here : 
 
-Day 04 of My 30 Days MLOps Challenge
+**Day 04 of My 30 Days MLOps Challenge**
 
 
 
@@ -295,7 +295,7 @@ Additionally, I’ve started reading the book: Machine Learning Engineering with
 
 
 
-Day 05 Mlops 30 Days Challenge
+**Day 05 Mlops 30 Days Challenge**
 
 
 Today I finished learning about Batch Deployment. Here is a quick recap of all the things I've learned in this part : 
