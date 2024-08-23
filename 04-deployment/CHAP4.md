@@ -347,6 +347,17 @@ What is AWS lambda
 
 Because we want to learn how to connect Lambda and Kinesis we first need to create a role. This role we define the kind of permission Lambda will have, in particular in need to be able to connect to Kinesis stream.
 
+## Code snippets
+Sending data:
+
+```bash
+KINESIS_STREAM_INPUT=ride_events
+aws kinesis put-record \ 
+--stream-name ${KINESIS STREAM_INPUT} \ 
+--partition-key 1 \ 
+--data "Hello, this is a test."
+```
+
 
 
 
