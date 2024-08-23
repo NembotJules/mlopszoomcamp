@@ -331,7 +331,22 @@ I've also continued learning with the book Machine Learning Engineering with Pyt
 
 - Develop: A working solution that can be hosted on appropriate and available infrastructure, Thorough test results and performance metrics (for algorithm and software), and agreed retraining and deployment strategy, unit tests, integration tests, and regression tests, solution packaging, and pipelines
 
-- Deploy : A working and tested deployment process. Provisioned infrastructure with appropriate security and performance characteristics, model retraining and management processes, and end-to-end working solution
+- Deploy : A working and tested deployment process. Provisioned infrastructure with appropriate security and performance characteristics, model retraining and management processes, and end-to-end working solution.
+
+
+## 4.5 : Streaming: Deploying models with Kinesis and Lambda
+
+**Streaming deployment** is a strategy where a machine learning model is applied in real-time to data streams. Instead of making predictions or analyzing batches of data collected over time, the model processes data as it arrives. This approach is particularly useful in scenarios where data is continuously generated, or when decisions need to be made in real-time.
+
+
+What is AWS lambda
+
+**AWS Lambda** is a compute service that allows you to run code for virtually any type of application or serverless service without the need for server administration. AWS Lambda handles all the administrative tasks for you, including server and operating system maintenance, resource allocation, automatic scaling, code monitoring, and logging. All you need to do is provide your code in one of the languages supported by AWS Lambda.
+
+**AWS Kinesis** is a scalable and durable real-time data streaming service to ingest and analyze data in real-time from multiple data sources. Its Amazon’s fully managed service for collecting, processing and analyzing streaming data in the cloud. Some examples where Kinesis can be used streaming data are trading data, geospatial data, social networks data, any realtime monitoring solutions etc.
+
+Because we want to learn how to connect Lambda and Kinesis we first need to create a role. This role we define the kind of permission Lambda will have, in particular in need to be able to connect to Kinesis stream.
+
 
 
 
