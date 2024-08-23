@@ -349,14 +349,70 @@ Because we want to learn how to connect Lambda and Kinesis we first need to crea
 
 ## Code snippets
 Sending data:
+## we always need to specify the key in this case the key is the ride_id, kinesis use the id to understand to which partition,
+## to which shard, to put the event
+```bash
+KINESIS_STREAM_INPUT=ride_events
+aws kinesis put-record \ 
+--stream-name ${KINESIS_STREAM_INPUT} \ 
+--partition-key 1 \  
+--data "Hello, this is a test."
+```
+
+This is how the event AWS Lambda receive look like : 
+
+```bash
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "1",
+                "sequenceNumber": "49655157810385751685070673378890723623103857640811266050",
+                "data": "SGVsbG8sIHRoaXMgaXMgYSB0ZXN0Lg==",
+                "approximateArrivalTimestamp": 1724440704.467
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49655157810385751685070673378890723623103857640811266050",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::992382429218:role/lambda-kinesis-role",
+            "awsRegion": "us-east-1",
+            "eventSourceARN": "arn:aws:kinesis:us-east-1:992382429218:stream/ride_events"
+        }
+    ]
+}
+```
+
+We can see that  data = "SGVsbG8sIHRoaXMgaXMgYSB0ZXN0Lg==", because it has been encoded it base64, so in order to read our data we need to decode it first.
+
+Here is a piece of code that will help us, do just that : 
+
+```python
+base64.b64decode(data_encoded).decode('utf-8')
+```
+Now our goal was to send a ride event to AWS lambda so let's do that : 
 
 ```bash
 KINESIS_STREAM_INPUT=ride_events
 aws kinesis put-record \ 
---stream-name ${KINESIS STREAM_INPUT} \ 
---partition-key 1 \ 
---data "Hello, this is a test."
+--stream-name ${KINESIS_STREAM_INPUT} \ 
+--partition-key 1 \  
+--data '{
+        "ride" : {
+            "PULocationID" : 130, 
+            "DOLocationID": 205, 
+            "trip_distance": 3.66
+        
+        }, 
+        "ride_id" : 256
+        }'
+}'
 ```
+
+
+
+
 
 
 
