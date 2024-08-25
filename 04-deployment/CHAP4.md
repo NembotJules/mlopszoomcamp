@@ -407,7 +407,30 @@ aws kinesis put-record \
         }, 
         "ride_id" : 256
         }'
-}'
+```
+Now the event that AWS Lambda receive look like this : 
+
+```bash
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "1",
+                "sequenceNumber": "49655157810385751685070673379959414047643374755363422210",
+                "data": "ewogICAgInJpZGUiOiB7CiAgICAgICAgIlBVTG9jYXRpb25JRCI6IDEzMCwKICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICJ0cmlwX2Rpc3RhbmNlIjogMy42NgogICAgfSwKICAgICJyaWRlX2lkIjogMjU2Cn0=",
+                "approximateArrivalTimestamp": 1724443395.854
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49655157810385751685070673379959414047643374755363422210",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::992382429218:role/lambda-kinesis-role",
+            "awsRegion": "us-east-1",
+            "eventSourceARN": "arn:aws:kinesis:us-east-1:992382429218:stream/ride_events"
+        }
+    ]
+}
 ```
 
 
