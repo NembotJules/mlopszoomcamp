@@ -34,3 +34,84 @@ Now a question emerge, how can you avoid all this problem??
 By monitoring your Ml system. How specifically it's exactly what i will learn in the following days
 
 See you!
+
+
+## 5.1 Environment Setup
+
+Here we used Docker compose to set up our different services, i checked everything work as expected. Here is the docker compose file for reference: 
+
+
+```bash
+version: '3.7'
+
+volumes: 
+  grafana_data: {}
+
+networks:
+  front-tier:
+  back-tier:
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
+    networks:
+      - back-tier
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - back-tier
+      - front-tier  
+
+  grafana:
+    image: grafana/grafana-enterprise
+    user: "472"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config/grafana_datasources.yaml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
+     # - ./config/grafana_dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
+     # - ./dashboards:/opt/grafana/dashboards
+    networks:
+      - back-tier
+      - front-tier
+    restart: always
+```
+
+Here is the grafana_datasources.yaml for reference : 
+
+```bash
+# config file version
+apiVersion: 1
+
+# list of datasources to insert/update
+# available in the database
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    url: db:5432
+    database: test
+    user: postgres
+    secureJsonData:
+      password: 'example'
+    jsonData:
+      sslmode: 'disable'
+      database: test
+```
+
+In order to set up all the services you just need to run : 
+
+```bash
+docker-compose up --build
+```
+
+    
