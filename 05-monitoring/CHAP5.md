@@ -36,7 +36,7 @@ By monitoring your Ml system. How specifically it's exactly what i will learn in
 See you!
 
 
-## 5.1 Environment Setup
+## 5.2 Environment Setup
 
 Here we used Docker compose to set up our different services, i checked everything work as expected. Here is the docker compose file for reference: 
 
