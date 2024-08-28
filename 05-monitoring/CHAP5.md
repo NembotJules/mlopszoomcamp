@@ -114,4 +114,12 @@ In order to set up all the services you just need to run :
 docker-compose up --build
 ```
 
+
+In my LinkedIn post i need to talk about : 
+
+- What is Evidently
+- Evidently Report
+- Evidently Dashboard
+
+Why is Evidently a good choice for Batch mode : In batch mode, data comes in batch and therefore we can compare the distributions of that data to the distribution of our reference data. This is how we mesure Drift.
     
