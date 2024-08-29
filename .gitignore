@@ -16,6 +16,7 @@ mlflow.db
 # mlflow runs
 02-experiment-tracking/homework/mlruns
 04-deployment/batch/output
+05-monitoring/Workspace
 
 
 # Distribution / packaging

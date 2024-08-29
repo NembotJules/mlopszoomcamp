@@ -122,4 +122,9 @@ In my LinkedIn post i need to talk about :
 - Evidently Dashboard
 
 Why is Evidently a good choice for Batch mode : In batch mode, data comes in batch and therefore we can compare the distributions of that data to the distribution of our reference data. This is how we mesure Drift.
+
+
+Learn How to calculate some dummy metrics and load the information in the Grafana database, access data and visualize it using Grafana Dashboard.
+
+dummy_metrics_calculation.py we want to create a database, create a table, write a function which add metric row by row, we are going to create a cycle
     
